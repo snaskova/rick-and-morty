@@ -41,7 +41,7 @@ $(function () {
         getCharacters(thisButton);
 
         let $siblings = $(this).siblings();
-        console.log(e.target.siblings());
+        console.log();
 
         if ($(this).hasClass('active')) {
             $siblings.removeClass('active')
