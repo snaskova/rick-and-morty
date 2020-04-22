@@ -6,11 +6,13 @@ const createCard = e => {
     let origin = e.origin.name;
 
     var output = ` <div class="card">
-                    <img width="100px" height="100px" class="image" src="${image}" alt="Thumbnail image for ${name}">
+                    <div class="main-info">
+                    <img width="100px" height="100px" class="avatar" src="${image}" alt="Thumbnail image for ${name}">
+                    <h3 class="name"><span class="bold">${name}</span></h3>
+                    </div>
                     <div class="info">
-                        <h3 class="name"><span class="bold">${name}</span></h2>
-                        <p class="species">Species: <span class="bold">${species}</span></p>
-                        <p class="origin">Origin: <span class="bold">${origin}</span></p>
+                        <p class="tag">Species: <span class="tag-info">${species}</span></p>
+                        <p class="tag">Origin: <span class="tag-info">${origin}</span></p>
                     </div>
                 </div>`;
 
@@ -37,15 +39,22 @@ $(function () {
 
     // PAGINATION LOGIC
     $('.page-button').click(function (e) {
-        let thisButton = $(this).data('id');
-        getCharacters(thisButton);
 
-        let $siblings = $(this).siblings();
-        console.log();
+        //  ADD .ACTIVE TO SELECTED PAGE BUTTON
+        $(this).parent().addClass('active');
 
-        if ($(this).hasClass('active')) {
-            $siblings.removeClass('active')
-        }
+        // SHOW OTHER PAGE RESULTS
+        let currentId = $(this).data('id');
+        getCharacters(currentId);
+
+        // IF OTHER BUTTONS HAVE .ACTIVE, REMOVE IT
+        let $siblings = $(this).parent().siblings();
+
+        $siblings.each((e, a) => {
+            if ($(a).hasClass('active')) {
+                $(a).removeClass('active');
+            }
+        });
 
     })
 
