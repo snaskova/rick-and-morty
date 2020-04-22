@@ -2,13 +2,18 @@ body{
     padding: 0;
     margin: 0;
     font-size: 16px;
+    font-family: $font2;
 }
 *{
     box-sizing: border-box;
 }
 h1, h2, h3, h4, p{
     margin: 0;
-    line-height: 1;
+    line-height: 1.3;
+}
+
+h1, h2, h3, h4{
+    font-family: $font1;
 }
 
 a{
