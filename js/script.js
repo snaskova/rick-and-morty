@@ -6,7 +6,7 @@ const createCard = e => {
     let origin = e.origin.name;
 
     var output = ` <div class="card">
-                    <img class="image" src="${image}" alt="Thumbnail image for ${name}">
+                    <img width="100px" height="100px" class="image" src="${image}" alt="Thumbnail image for ${name}">
                     <div class="info">
                         <h3 class="name"><span class="bold">${name}</span></h2>
                         <p class="species">Species: <span class="bold">${species}</span></p>
