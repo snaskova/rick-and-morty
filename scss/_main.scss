@@ -3,6 +3,7 @@
     background: url('../images/background.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
 
@@ -50,24 +51,32 @@
     background: rgba($blue, .2);
     border: 1px solid $blue;
     align-items: center;
+    cursor: pointer;
+
+    // &:not(.popup-wrapper){
+    //     cursor: pointer;
+    // }
+    &.popup-wrapper{
+        cursor: default;
+    }
 
     .main-info{
         display: flex;
         align-items: center;
 
         .avatar{
+            background-color: rgba($blue, .5);
             max-width: 80px;
             height: auto;
         }
         .name{
             margin: 10px 15px;
-            color: #fff;
             font-size: 26px;
         }
     }
    
 
-    .info{
+    .specs{
         padding: 20px 10px 0;
 
         .tag{
@@ -77,15 +86,93 @@
             font-size: 14px;
 
             .tag-info{
+                color: #fff;
                 font-weight: bolder;
                 text-transform: initial;
-                color: #fff;
                 font-size: 16px;
             }
         }
     }
 
 }
+
+
+#popup{
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(#000, .93);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    .popup-wrapper{
+        max-width: 600px;
+        padding: 30px;
+
+        .main-info{
+            .avatar{
+                max-width: 230px;
+            }
+          .specs{
+              padding: 0 30px;
+
+              .name{
+                  font-size: 34px;
+                  line-height: 1;
+                  margin: 10px 0 20px;
+              }
+
+              .tag{
+                  font-size: 16px;
+              }
+
+              .tag-info{
+                  font-size: 18px;
+              }
+
+              .status{
+                  margin-top: 20px;
+                  display: inline-block;
+                  color: $green;
+                  text-transform: uppercase;
+                  font-weight: 500;
+                  font-size: 14px;
+                  padding: 7px 14px;
+                  background-color: rgba($green, .3);
+                  border: 1px solid $green;
+
+                  &.dead{
+                      color: $red;
+                      background-color: rgba($red, .3);
+                     border: 1px solid $red;
+                  }
+                  &.unknown{
+                    color: $blue;
+                    background-color: rgba($blue, .3);
+                   border: 1px solid $blue;
+                }
+              }
+          }
+        }
+
+        .text{
+            text-align: center;
+
+           p{
+               text-align: left;
+            font-weight: 300;
+            margin: 30px 0;
+           }
+        }
+    }
+}
+
 .pagination{
     position: relative;
     list-style-type: none;

@@ -10,19 +10,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,700|VT323&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
     <div id="page-wrap">
-        <div class="content">
+        <section class="content">
+            <header>
+                <img src="images/logo.png" alt="Rick and Morty logo" class="main-logo">
+            </header>
 
-            <img src="images/logo.png" alt="Ricn and Morty logo" class="main-logo">
-
-
-            <div id="content"></div>
+            <section>
+                <div id="content"></div>
+            </section>
 
             <ul class="pagination">
                 <li>
@@ -60,9 +62,11 @@
                 </li>
             </ul>
 
+        </section>
 
-        </div>
+
     </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
